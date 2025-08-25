@@ -19,6 +19,8 @@
 
 <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
 <form name="suscribirse">
+    <fieldset>
+        <legend>Persona</legend>
     <p>
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre" size="40" maxlength="40">
@@ -40,6 +42,10 @@ Sexo:   <input type="radio" name="genero" value="masculino">
     <label for="edad">Edad:</label>
     <input type="number" name="edad" id="edad" placeholder="Ingrese la edad" max="150" min="15">
 </p>
+
+    </fieldset>
+    <fieldset>
+        <legend>Informacion de la Cuenta</legend>
 <p>
     <label for="email"></label>
     <input type="email" id="email" name="email" placeholder="Ingrese el email" size="40" maxlength="40">
@@ -57,7 +63,9 @@ Sexo:   <input type="radio" name="genero" value="masculino">
     <label for="pass2">Confirmar Password:</label>
     <input type="password" id="pass2" name="pass2" placeholder="Confirme la contraseña" size="40" maxlength="40">
 </p>
-
+</fieldset>
+<fieldset>
+    <legend>Informacion del diario</legend>
 <p>
 Tipo de servicio:
     <select name="servicios" id="servicios">
@@ -84,6 +92,7 @@ Tema:   <input type="checkbox" name="ck_politica" value="politica"> <label for="
 
 
 </p>
+</fieldset>
     <button type="button">Botón de Enviar</button>
 
 </form>

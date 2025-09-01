@@ -18,7 +18,9 @@
         h3{
             text-shadow: 1px 1px #000000;
         }
-
+/*
+Estilos principales del body
+*/
         body{
             text-align: center;
             font-family: "Montserrat", sans-serif;

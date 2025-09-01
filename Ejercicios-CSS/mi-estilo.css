@@ -1,0 +1,26 @@
+ div{
+            border:  1px solid black;
+            margin: 20px;
+            padding: 10px;
+            background-color: rgba(0, 255, 255, 0.06);
+            border-radius: 15px;
+            box-shadow: 10px 10px #000000;
+        }
+        .titulo{
+            text-shadow: 1px 1px #000000;
+        }
+        #icono_usuario{
+            width: 20%;
+            float: left;
+            border-radius: 50%;
+        }
+
+        h3{
+            text-shadow: 1px 1px #000000;
+        }
+
+        body{
+            text-align: center;
+            font-family: "Montserrat", sans-serif;
+            background: linear-gradient(to right, red , yellow);
+        }

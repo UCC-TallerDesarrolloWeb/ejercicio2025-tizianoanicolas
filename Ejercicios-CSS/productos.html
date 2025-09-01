@@ -51,7 +51,37 @@
 
     </nav>
     <aside class="item3">
-
+        <fieldset>
+            <legend>Busquedas</legend>
+            <label for="search">Buscar:</label>
+            <input type="text" id="search" name="search" placeholder="Palabra..">
+        </fieldset>
+        <fieldset>
+            <legend>Precios</legend>
+            <p>
+            <label for="price-min">Minimo:</label>
+            <input type="number" id="price-min" name="price-min" value="0" min="0">
+            </p>
+            <p>
+            <label for="price-max">Maximo:</label>
+            <input type="number" id="price-max" name="price-max" value="0" min="0">
+            </p>
+        </fieldset>
+        <fieldset>
+            <legend>Tipos de productos</legend>
+            <p>
+                <input type="checkbox" id="protectores" name="protectores">
+                <label for="protectores">Protectores</label>
+            </p>
+            <p>
+                <input type="checkbox" id="entrenamiento" name="entrenamiento">
+                <label for="entrenamiento">Entrenamiento</label>
+            </p>
+            <p>
+                <input type="checkbox" id="dobok" name="dobok">
+                <label for="dobok">Dobok</label>
+            </p>
+        </fieldset>
     </aside>
     <main class="item4">
         <div>

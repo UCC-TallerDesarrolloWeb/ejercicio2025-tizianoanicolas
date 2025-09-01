@@ -26,3 +26,10 @@ Estilos principales del body
             font-family: "Montserrat", sans-serif;
             background: linear-gradient(to right, red , yellow);
         }
+
+        .pos-fix{
+            position: fixed;
+            top: 0;
+            box-shadow: none;
+            width: 250px;
+        }

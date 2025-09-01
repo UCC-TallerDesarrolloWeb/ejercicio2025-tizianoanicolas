@@ -17,10 +17,43 @@
         div img{
             width: 100%;
         }
+        .item1{
+            grid-area: header;
+        }
+        .item2{
+            grid-area: nav;
+        }
+        .item3{
+            grid-area: aside;
+        }
+        .item4{
+            grid-area: main;
+        }
+        .item5{
+            grid-area: footer;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-areas: 
+            'header header header header'
+            'nav nav nav nav'
+            'aside main main main'
+            'footer footer footer footer'
+            ;
+        }
     </style>
 </head>
-<body>
-    <main>
+<body class="grid-container">
+    <header class="item1">
+        Catalogo de productos
+    </header>
+    <nav class="item2">
+
+    </nav>
+    <aside class="item3">
+
+    </aside>
+    <main class="item4">
         <div>
             <img src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp" alt="Cabezal cerrado">
             <h3>Cabezal cerrado</h3>
@@ -46,5 +79,8 @@
             <h3>Dobok</h3>
         </div>
     </main>
+    <footer class="item5">
+        Info de contacto
+    </footer>
 </body>
 </html>

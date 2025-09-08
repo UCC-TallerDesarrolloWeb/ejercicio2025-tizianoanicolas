@@ -9,6 +9,20 @@ function convertirUnidades(unidad, valor)
 {
     let metro, pie, pulgada, yarda;
 
+    console.log(valor)
+    console.log(isNaN(valor))
+
+    if(isNaN(valor))
+    {
+        alert("El valor ingresado no es correcto");
+        metro="";
+        pie="";
+        yarda="";
+        pulgada="";
+    }
+    else
+    {
+
     if(unidad=="unid_metro")
     {
         metro= valor;
@@ -39,6 +53,7 @@ function convertirUnidades(unidad, valor)
         pie= 3*yarda;
         pulgada= 36*yarda;
         metro= 0.9144*yarda;
+    }
     }
 
     document.getElementById("metro").value= metro;

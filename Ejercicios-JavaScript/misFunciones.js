@@ -9,9 +9,6 @@ function convertirUnidades(unidad, valor)
 {
     let metro, pie, pulgada, yarda;
 
-    console.log(valor)
-    console.log(isNaN(valor))
-
     if(isNaN(valor))
     {
         alert("El valor ingresado no es correcto");

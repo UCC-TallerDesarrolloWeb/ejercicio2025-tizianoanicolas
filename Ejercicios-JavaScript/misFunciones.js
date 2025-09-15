@@ -92,3 +92,19 @@ let mostarOcultarDiv = (id) =>
     const mostrar = id=="mostrarDiv" ? "block" : "none"
     document.getElementsByName("unDiv")[0].style.display = mostrar;
 }
+
+let sumar = () =>
+{
+    let sum1 = document.getElementById("nums1").value;
+    let sum2 = document.getElementById("nums2").value;
+
+    if(isNaN(sum1) || isNaN(sum2))
+    {
+        alert("Una de las variables no es numérica");
+    }
+    else
+    {
+        document.getElementById("totalS").value = Number(sum1) + Number(sum2);
+    }
+    
+}

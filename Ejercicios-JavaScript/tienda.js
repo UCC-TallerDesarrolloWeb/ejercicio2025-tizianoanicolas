@@ -58,17 +58,88 @@ const productos = [
     talle: ["XXS", "XS", "S", "M", "L", "XL"],
     precio: 35000,
     web: "https://www.daedo.com/collections/collection-itf-gloves/products/pritf-2022",
-    imagen: "protectores-manos.webp",
+    imagen: "protectores-pie.webp",
   },
 ];
 
 
-let mostrarDetalle = () =>
+let mostrarDetalle = (id) =>
 {
   document.getElementById("detalle").style.display = "block";
+  document.getElementById("titulo-prod").innerText = productos[id].nombre;
+  document.getElementById("descr-prod").innerText = productos[id].description;
+  document.getElementById("precio-prod").innerText = productos[id].precio;
 }
 
 let cerrarModal = () =>
 {
   document.getElementById("detalle").style.display = "none";
+}
+
+let mostrarCatalogo = () =>
+{
+  let contenido = "";
+  
+  productos.forEach((prod, id) =>
+  {
+    contenido+=`<div>
+            <img src="images/${prod.imagen}" alt="${prod.nombre}" />
+            <h3>${prod.nombre}</h3>
+            <button type="button" onclick="mostrarDetalle(${id})">Ver Detalle</button>
+            <button type="button" onclick="agregarAlcarrito(${id})">Agregar al carrito</button> 
+        </div>`;
+  });
+
+  document.getElementById("catalogo").innerHTML = contenido;
+}
+
+let agregarAlcarrito = (id) =>
+{
+  const listaInicial = JSON.parse(localStorage.getItem("carrito"));
+  if(listaInicial==null)
+  {
+    listadoProductos=[];
+  }
+  else
+  {
+    listadoProductos = listaInicial;
+  }
+  
+  listadoProductos.push(id);
+  localStorage.setItem("carrito", JSON.stringify(listadoProductos));
+}
+
+let mostrarCarrito = () =>
+{
+  let contenido = "";
+
+  const carrito = JSON.parse(localStorage.getItem("carrito"))
+
+if (carrito!=null)
+{
+  carrito.forEach((num, id) =>
+  {
+    contenido+=`<div>
+            <h3>${productos[num].nombre}</h3>
+            <button type="button" onclick="eliminarProducto(${id})">Eliminar producto</button>
+        </div>`;
+  });
+}
+  
+  contenido+= `<button type="button" onclick="vaciarCarrito()">Vaciar carrito</button>`;
+  document.getElementById("mostrar-carrito").innerHTML = contenido;
+}
+
+let vaciarCarrito = () =>
+{
+  localStorage.removeItem("carrito");
+  window.location.reload();
+}
+
+let eliminarProducto = (id) =>
+{
+  const carrito = JSON.parse(localStorage.getItem("carrito"));
+  carrito.splice(id, 1);
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+  window.location.reload();
 }

@@ -5,7 +5,7 @@
  * @param Parámetro B
  * @return Valor que retorna
  */
-function convertirUnidades(unidad, valor)
+let convertirUnidades = (unidad, valor) =>
 {
     let metro, pie, pulgada, yarda;
 
@@ -75,4 +75,20 @@ let convertirGR = (id, valor) =>
         cantGrados = cantRadianes*180/Math.PI;
         document.getElementById("grados").value = cantGrados
     }
+}
+
+
+let mostarOcultarDiv = (id) =>
+{
+//    if(id=="mostrarDiv")
+//    {
+//        document.getElementsByName("unDiv")[0].style.display = "block";
+//    }
+//    else
+//    {
+//        document.getElementsByName("unDiv")[0].style.display = "none";
+//    }
+
+    const mostrar = id=="mostrarDiv" ? "block" : "none"
+    document.getElementsByName("unDiv")[0].style.display = mostrar;
 }

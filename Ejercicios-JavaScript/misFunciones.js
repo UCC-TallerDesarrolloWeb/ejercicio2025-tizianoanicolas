@@ -59,3 +59,20 @@ function convertirUnidades(unidad, valor)
     document.getElementById("yarda").value= yarda;
 
 }
+
+let convertirGR = (id, valor) =>
+{
+    let cantGrados, cantRadianes;
+    if (id=="grados")
+    {
+        cantGrados = valor;
+        cantRadianes = cantGrados*Math.PI/180
+        document.getElementById("radianes").value = cantRadianes
+    }
+        else
+    {
+        cantRadianes = valor;
+        cantGrados = cantRadianes*180/Math.PI;
+        document.getElementById("grados").value = cantGrados
+    }
+}

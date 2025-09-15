@@ -9,6 +9,11 @@ let convertirUnidades = (unidad, valor) =>
 {
     let metro, pie, pulgada, yarda;
 
+    if(valor.includes(","))
+    {
+        valor=valor.replace(",", ".")
+    }
+
     if(isNaN(valor))
     {
         alert("El valor ingresado no es correcto");
@@ -54,8 +59,8 @@ let convertirUnidades = (unidad, valor) =>
     }
 
     document.getElementById("metro").value= Number(metro).toFixed(2);
-    document.getElementById("pie").value= Math.round(pie*100)/100;
     document.getElementById("pulgada").value= Number(pulgada).toFixed(2);
+    document.getElementById("pie").value= Math.round(pie*100)/100;
     document.getElementById("yarda").value= Math.round(yarda*100)/100;
 
 }

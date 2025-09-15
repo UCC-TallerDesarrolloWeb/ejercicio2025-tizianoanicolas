@@ -3,6 +3,7 @@
 <head>
     <title>Catalogo de productos</title>
     <link rel="stylesheet" href="store.css">
+    <script type="text/javascript" src="tienda.js"></script>
 </head>
 <body class="grid-container">
     <header class="item1">
@@ -46,28 +47,35 @@
         </fieldset>
     </aside>
     <main class="item4">
-        <div>
-            <img src="../Ejercicios-JavaScript/images/cabezal-cerrado.webp" alt="Cabezal cerrado">
+        <dialog id="detalle">
+            <h2>Detalle del Producto</h2>
             <h3>Cabezal cerrado</h3>
+            <p>Este producto viene del talle 1 al 3.</p>
+            <button type="button" onclick="cerrarModal()">Cerrar</button>
+        </dialog>
+        <div>
+            <img src="images/cabezal-cerrado.webp" alt="Cabezal cerrado">
+            <h3>Cabezal cerrado</h3>
+            <button type="button" onclick="mostrarDetalle()">Ver Detalle</button>
         </div>
         <div>
-            <img src="../Ejercicios-JavaScript/images/escudo-potencia.webp" alt="Escudo de potencia">
+            <img src="images/escudo-potencia.webp" alt="Escudo de potencia">
             <h3>Escudo de potencia</h3>
         </div>
         <div>
-            <img src="../Ejercicios-JavaScript/images/foco-con-dedos.webp" alt="foco con dedos">
+            <img src="images/foco-con-dedos.webp" alt="foco con dedos">
             <h3>Foco con dedos</h3>
         </div>
         <div>
-            <img src="../Ejercicios-JavaScript/images/protectores-manos.webp" alt="protectores de manos">
+            <img src="images/protectores-manos.webp" alt="protectores de manos">
             <h3>Protectores de manos</h3>
         </div>
         <div>
-            <img src="../Ejercicios-JavaScript/images/protectores-pie.webp" alt="protectores de pie">
+            <img src="images/protectores-pie.webp" alt="protectores de pie">
             <h3>Protectores de pie</h3>
         </div>
         <div>
-            <img src="../Ejercicios-JavaScript/images/dobok.webp" alt="dobok">
+            <img src="images/dobok.webp" alt="dobok">
             <h3>Dobok</h3>
         </div>
     </main>

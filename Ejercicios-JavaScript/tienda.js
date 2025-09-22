@@ -140,6 +140,16 @@ let eliminarProducto = (id) =>
 {
   const carrito = JSON.parse(localStorage.getItem("carrito"));
   carrito.splice(id, 1);
+
+  if(carrito.length > 0)
+  {
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+  }
+  else
+  {
+    localStorage.removeItem("carrito");
+  }
+
   localStorage.setItem("carrito", JSON.stringify(carrito));
   window.location.reload();
 }

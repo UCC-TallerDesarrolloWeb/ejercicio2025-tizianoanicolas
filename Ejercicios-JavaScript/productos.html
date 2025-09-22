@@ -49,13 +49,16 @@
                 <label for="dobok">Dobok</label>
             </p>
         </fieldset>
-        <select id="order" onchange="orderCatalog()">
+        <fieldset>
+            <legend>Ordenar por:</legend>
+            <select id="order" onchange="orderCatalog()">
             <option disabled value="">Seleccione un orden</option>
             <option value="menor">Precio: menor a mayor</option>
             <option value="mayor">Precio: mayor a menor</option>
             <option value="a-z">Nombre: A-Z</option>
             <option value="z-a">Nombre: Z-A</option>
         </select>
+        </fieldset>
         <fieldset>
             <legend>Marca
             </legend>

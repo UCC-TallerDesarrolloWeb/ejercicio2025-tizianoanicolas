@@ -34,17 +34,26 @@
         <fieldset>
             <legend>Tipos de productos</legend>
             <p>
-                <input type="checkbox" id="protectores" name="protectores">
+                <input type="checkbox" id="protectores" name="protectores" onchange="filtrarProducto()">
                 <label for="protectores">Protectores</label>
             </p>
             <p>
-                <input type="checkbox" id="entrenamiento" name="entrenamiento">
+                <input type="checkbox" id="entrenamiento" name="entrenamiento" onchange="filtrarProducto()">
                 <label for="entrenamiento">Entrenamiento</label>
             </p>
             <p>
-                <input type="checkbox" id="dobok" name="dobok">
+                <input type="checkbox" id="dobok" name="dobok" onchange="filtrarProducto()">
                 <label for="dobok">Dobok</label>
             </p>
+        </fieldset>
+        <fieldset>
+            <legend>Marca
+            </legend>
+            <select id="marca" onchange="filtrarProducto()">
+                <option value="Todas">Todas</option>
+                <option value="Gran marc">Gran Marc</option>
+                <option value="Daedo">Daedo</option>
+            </select>
         </fieldset>
     </aside>
     <dialog id="detalle">

@@ -154,12 +154,19 @@ let eliminarProducto = (id) =>
   window.location.reload();
 }
 
-let filtrarProducto = () => 
+let filtrarProducto = () => //El toLowerCase() no esta funcionando
 {
   let searchWord = document.getElementById("search").value;
   let min = document.getElementById("price-min").value;
   let max = document.getElementById("price-max").value;
+  let prot = document.getElementById("protectores").checked;
+  let entr = document.getElementById("entrenamiento").checked;
+  let dob = document.getElementById("dobok").checked;
+  let marca = document.getElementById("marca").value;
+
   let newLista = productos;
+
+
 if (searchWord)
 {
   newLista = newLista.filter((prod) => prod.nombre.toLowerCase().includes(searchWord.toLowerCase()) 
@@ -176,6 +183,20 @@ if (max)
   newLista = newLista.filter((prod => prod.precio <= max));
 }
 
+let category = [];
+prot ? category.push("protectores") : "";
+entr ? category.push("entrenamiento") : "";
+dob ? category.push("dobok") : "";
+
+if (category.length>0)
+{
+  newLista = newLista.filter((prod) => category.includes(prod.categoria));
+}
+
+if (marca !== "Todas")
+{
+  newLista = newLista.filter((prod) => prod.marca === marca);
+}
   
   mostrarCatalogo(newLista);
 }

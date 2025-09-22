@@ -76,11 +76,11 @@ let cerrarModal = () =>
   document.getElementById("detalle").style.display = "none";
 }
 
-let mostrarCatalogo = () =>
+let mostrarCatalogo = (prod = productos) =>
 {
   let contenido = "";
   
-  productos.forEach((prod, id) =>
+  prod.forEach((prod, id) =>
   {
     contenido+=`<div>
             <img src="images/${prod.imagen}" alt="${prod.nombre}" />
@@ -152,4 +152,30 @@ let eliminarProducto = (id) =>
 
   localStorage.setItem("carrito", JSON.stringify(carrito));
   window.location.reload();
+}
+
+let filtrarProducto = () => //andaba hasta el toLowerCase() en searchWord
+{
+  let searchWord = document.getElementById("search").value;
+  let min = document.getElementById("price-min").value;
+  let max = document.getElementById("price-max").value;
+  let newLista = productos;
+if (searchWord)
+{
+  newLista = newLista.filter((prod) => prod.nombre.toLowerCase().includes(searchWord.toLowerCase()) 
+  || prod.description.toLowerCase().includes(searchWord.toLowerCase()));
+}
+
+if (min)
+{
+  newLista = newLista.filter((prod => prod.precio >= min));
+}
+
+if (max)
+{
+  newLista = newLista.filter((prod => prod.precio <= max));
+}
+
+  
+  mostrarCatalogo(newLista);
 }

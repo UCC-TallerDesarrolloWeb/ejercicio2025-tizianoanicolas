@@ -15,7 +15,7 @@ const productos = [
     categoria: "Dobok",
     marca: "Daedo",
     talle: ["1", "2", "3", "4", "5", "6", "7", "8"],
-    precio: 115000,
+    precio: 115000.56,
     web: "https://www.daedo.com/products/taitf-10813",
     imagen: "dobok.webp",
   },
@@ -25,7 +25,7 @@ const productos = [
     categoria: "Entrenamiento",
     marca: "Gran Marc",
     talle: ["s/talle"],
-    precio: 51700,
+    precio: 51700.5,
     web: "https://www.granmarctiendaonline.com.ar/productos/escudo-de-potencia-grande/",
     imagen: "escudo-potencia.webp",
   },
@@ -35,7 +35,7 @@ const productos = [
     categoria: "Entrenamiento",
     marca: "Gran Marc",
     talle: ["s/talle"],
-    precio: 15000,
+    precio: 15000.3,
     web: "https://www.granmarctiendaonline.com.ar/productos/foco-con-dedos/",
     imagen: "foco-con-dedos.webp",
   },
@@ -56,7 +56,7 @@ const productos = [
     categoria: "Protectores",
     marca: "Daedo",
     talle: ["XXS", "XS", "S", "M", "L", "XL"],
-    precio: 35000,
+    precio: 35000.43,
     web: "https://www.daedo.com/collections/collection-itf-gloves/products/pritf-2022",
     imagen: "protectores-pie.webp",
   },
@@ -85,6 +85,7 @@ let mostrarCatalogo = (prod = productos) =>
     contenido+=`<div>
             <img src="images/${prod.imagen}" alt="${prod.nombre}" />
             <h3>${prod.nombre}</h3>
+            <p>${formatPrice(prod.precio)}</p>
             <button type="button" onclick="mostrarDetalle(${id})">Ver Detalle</button>
             <button type="button" onclick="agregarAlcarrito(${id})">Agregar al carrito</button> 
         </div>`;
@@ -107,6 +108,7 @@ let agregarAlcarrito = (id) =>
   
   listadoProductos.push(id);
   localStorage.setItem("carrito", JSON.stringify(listadoProductos));
+  contarProductos();
 }
 
 let mostrarCarrito = () =>
@@ -121,6 +123,7 @@ if (carrito!=null)
   {
     contenido+=`<div>
             <h3>${productos[num].nombre}</h3>
+            <p>${formatPrice(productos[num].precio)}</p>
             <button type="button" onclick="eliminarProducto(${id})">Eliminar producto</button>
         </div>`;
   });
@@ -133,6 +136,7 @@ if (carrito!=null)
 let vaciarCarrito = () =>
 {
   localStorage.removeItem("carrito");
+  contarProductos();
   window.location.reload();
 }
 
@@ -149,7 +153,7 @@ let eliminarProducto = (id) =>
   {
     localStorage.removeItem("carrito");
   }
-
+  contarProductos();
   localStorage.setItem("carrito", JSON.stringify(carrito));
   window.location.reload();
 }
@@ -165,7 +169,6 @@ let filtrarProducto = () => //El toLowerCase() no esta funcionando
   let marca = document.getElementById("marca").value;
 
   let newLista = productos;
-
 
 if (searchWord)
 {
@@ -184,9 +187,9 @@ if (max)
 }
 
 let category = [];
-prot ? category.push("protectores") : "";
-entr ? category.push("entrenamiento") : "";
-dob ? category.push("dobok") : "";
+prot ? category.push("Protectores") : "";
+entr ? category.push("Entrenamiento") : "";
+dob ? category.push("Dobok") : "";
 
 if (category.length>0)
 {
@@ -197,6 +200,20 @@ if (marca !== "Todas")
 {
   newLista = newLista.filter((prod) => prod.marca === marca);
 }
-  
   mostrarCatalogo(newLista);
+}
+
+let formatPrice = (price) =>
+{
+  const numberFormat = new Intl.NumberFormat("es-AR", {currency: "ARS", style: "currency", });
+  return numberFormat.format(price);
+}
+
+let contarProductos = () => 
+{
+  const getCart = JSON.parse(localStorage.getItem("carrito"));
+  if (getCart != null)
+  {
+    document.getElementById("cant-prod").innerText = getCart.length;
+  }
 }

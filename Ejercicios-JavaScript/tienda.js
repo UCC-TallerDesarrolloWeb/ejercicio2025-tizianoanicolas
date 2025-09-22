@@ -183,7 +183,7 @@ let eliminarProducto = (id) =>
   window.location.reload();
 }
 
-let filtrarProducto = () => //El toLowerCase() no esta funcionando
+let filtrarProducto = () =>
 {
   let searchWord = document.getElementById("search").value;
   let min = document.getElementById("price-min").value;
@@ -234,11 +234,61 @@ let formatPrice = (price) =>
   return numberFormat.format(price);
 }
 
-let contarProductos = () => 
+
+let contarProductos = () => //está provocando un error en carrito
 {
   const getCart = JSON.parse(localStorage.getItem("carrito"));
   if (getCart != null)
   {
     document.getElementById("cant-prod").innerText = getCart.length;
   }
+}
+
+let orderCatalog = () =>
+{
+  const opt = document.getElementById("order").value;
+  let newProductos;
+  
+  switch(opt)
+  {
+    case "menor":
+      
+        newProductos = productos.sort((a, b) => a.precio - b.precio);
+      break;
+    case "mayor":
+      
+        newProductos = productos.sort((a, b) => b.precio - a.precio);
+      break;
+    case "a-z":
+      
+        newProductos = productos.sort((a, b) => 
+        {
+          if (a.nombre.toUpperCase() < b.nombre.toUpperCase())
+          {
+            return -1;
+          }
+          else
+          {
+            return 1;
+          }
+        });
+      break;
+    case "z-a":
+      
+        newProductos = productos.sort((a, b) => 
+        {
+          if (a.nombre.toUpperCase() > b.nombre.toUpperCase())
+          {
+            return -1;
+          }
+          else
+          {
+            return 1;
+          }
+        });
+      break;
+    default:
+     newProductos = productos.sort((a, b) => a.precio - b.precio);
+  };
+  mostrarCatalogo(newProductos);
 }

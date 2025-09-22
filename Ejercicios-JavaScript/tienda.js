@@ -154,7 +154,7 @@ let eliminarProducto = (id) =>
   window.location.reload();
 }
 
-let filtrarProducto = () => //andaba hasta el toLowerCase() en searchWord
+let filtrarProducto = () => 
 {
   let searchWord = document.getElementById("search").value;
   let min = document.getElementById("price-min").value;

@@ -15,8 +15,131 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+    <style>
+      .card img {
+        width: 35rem;
+      }
+      .col-2 img {
+        width: 3rem;
+      }
+      .action-buttons {
+        height: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+      .card {
+        transform: scale(1);
+        transition: transform 0.1s ease;
+      }
+      .card:hover {
+        transform: scale(1.05);
+      }
+      .card:hover .action-buttons {
+        height: auto;
+        opacity: 1;
+      }
+    </style>
   </head>
   <body>
-    
+    <div class="container my-5 d-flex gap-1">
+      <div class="card text-white text-bg-dark border-0">
+        <a href="#" class="text-light text-decoration-none">
+          <img
+            src="../Ejercicios-CSS/imagenes/satoshito89_01.png"
+            alt="video 1"
+            class="card-img-top"
+          />
+        </a>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2">
+              <a href="#">
+                <img
+                  src="../Ejercicios-CSS/imagenes/icono_usuario.jpg"
+                  alt="icono usuario"
+                  class="rounded-circle"
+                  width="48px"
+                />
+              </a>
+            </div>
+            <div class="col-1o">
+              <div class="card-title">
+                <a href="#" class="text-light text-decoration-none">
+                  Título del video
+                </a>
+              </div>
+              <div class="card-title">
+                <a href="#" class="text-light text-decoration-none opacity-50">
+                  Descripción del video
+                </a>
+              </div>
+              <div class="text-light opacity-50">1M de vistas · Hace 1 año</div>
+            </div>
+          </div>
+          <div class="row action-buttons p-2 overflow-hidden">
+            <div class="col-6 p-1">
+              <a href="#" class="btn text-secondary w-100 fw-bold d-block fs-6">
+                Ver más tarde
+              </a>
+            </div>
+            <div class="col-6 p-1">
+              <a href="#" class="btn text-secondary w-100 fw-bold d-block fs-6">
+                Agregar a lista
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card text-white text-bg-dark border-0">
+        <a href="#" class="text-light text-decoration-none">
+          <img
+            src="../Ejercicios-CSS/imagenes/satoshito89_01.png"
+            alt="video 1"
+            class="card-img-top"
+          />
+        </a>
+
+        <div class="card-body">
+          <div class="row">
+            <div class="col-2">
+              <a href="#">
+                <img
+                  src="../Ejercicios-CSS/imagenes/icono_usuario.jpg"
+                  alt="icono usuario"
+                  class="rounded-circle"
+                  width="48px"
+                />
+              </a>
+            </div>
+            <div class="col-1o">
+              <div class="card-title">
+                <a href="#" class="text-light text-decoration-none">
+                  Título del video
+                </a>
+              </div>
+              <div class="card-title">
+                <a href="#" class="text-light text-decoration-none opacity-50">
+                  Descripción del video
+                </a>
+              </div>
+              <div class="text-light opacity-50">1M de vistas · Hace 1 año</div>
+            </div>
+          </div>
+          <div class="row action-buttons p-2 overflow-hidden">
+            <div class="col-6 p-1">
+              <a href="#" class="btn text-secondary w-100 fw-bold d-block fs-6">
+                Ver más tarde
+              </a>
+            </div>
+            <div class="col-6 p-1">
+              <a href="#" class="btn text-secondary w-100 fw-bold d-block fs-6">
+                Agregar a lista
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

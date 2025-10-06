@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@media (width <= 700px) {
+  #features .container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+#navbar .container {
+  flex-direction: column;
+}
+#navbar .container ul li {
+  margin-left: 0;
+  padding: 15px;
+}
+
+#mainfooter .container {
+  text-align: center;
+  padding: 30px;
+}
+#mainfooter .container .bk-dark {
+  background-color: black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.9rem;
+  margin: 10px 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.large {
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.bk-primary {
+  background-color: #eaa600;
+}
+
+.btn {
+  display: inline-block;
+  text-align: center;
+  font-size: 15px;
+  padding: 12px 23px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: none;
+}
+.btn-light {
+  background-color: white;
+  color: black;
+}
+
+#navbar {
+  padding: 20px 0;
+}
+#navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+#navbar .container .logo img {
+  height: 50px;
+}
+#navbar .container ul {
+  display: flex;
+  list-style: none;
+}
+#navbar .container ul li {
+  margin-left: 40px;
+  text-transform: uppercase;
+}
+#navbar .container ul li a {
+  color: #000;
+}
+
+#showcase {
+  padding: 20px 0;
+  color: white;
+}
+#showcase .bk-primary {
+  padding: 40px 80px;
+}
+#showcase .bk-primary p {
+  padding: 10px 0;
+}
+
+#features .container {
+  display: grid;
+}
+@media (width >= 700px) {
+  #features .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+#features .container {
+  padding: 20px 0;
+}
+#features .container img {
+  width: 100%;
+}
+
+#mainfooter .container {
+  text-align: center;
+  padding: 30px;
+}
+
+/*# sourceMappingURL=styles.css.map */

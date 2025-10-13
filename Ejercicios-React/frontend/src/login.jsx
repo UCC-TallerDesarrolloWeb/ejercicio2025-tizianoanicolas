@@ -1,13 +1,18 @@
 import { useState } from "react";
-import "./login.css";
+import{ useNavigate } from "react-router-dom";
+
+import './styles/login.scss'
 
 const Login = () => {
     const [usuario, setusuario] = useState("");
     const [password, setpassword] = useState("");
+    const navigate = useNavigate();
+
     const handleLogin = async (e) => {
         e.preventDefault();
         if (usuario === "admin" && password === "admin") {
  alert("Login exitoso");
+    navigate("/actividades");
     }
     else
     {

@@ -1,0 +1,22 @@
+.Login-container {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+}
+
+.Login-form {
+    display: block;
+    border-radius: 4px black;
+    margin: 1rem auto;
+    box-shadow: 0 0 12px black;
+    padding: 2rem;
+}
+
+.Login-form input {
+    display: block;
+    margin: 1rem auto;
+    border-radius: 4px;
+    padding: 10px;
+}

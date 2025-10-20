@@ -1,14 +1,13 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router";
-import './styles/index.css';
-import './styles/App.css';
-import './styles/login.scss';
-import './styles/Activities.scss';
-import App from './App.jsx';
-import Login from "./login.jsx";
+import '@styles/index.css';
+import '@styles/App.css';
+import '@styles/login.scss';
+import '@styles/Activities.scss';
+import Login from './login.jsx';
 import Activities from "./activities.jsx";
-import Layout from './Layout.jsx';
+import Layout from '@components/Layout.jsx';
 import Home from './Home.jsx';
 
 createRoot(document.getElementById('root')).render(

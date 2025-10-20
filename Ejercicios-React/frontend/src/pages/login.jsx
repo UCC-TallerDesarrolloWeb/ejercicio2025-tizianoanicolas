@@ -1,7 +1,7 @@
 import { useState } from "react";
 import{ useNavigate } from "react-router-dom";
 
-import './styles/login.scss'
+import '@styles/login.scss'
 
 const Login = () => {
     const [usuario, setusuario] = useState("");

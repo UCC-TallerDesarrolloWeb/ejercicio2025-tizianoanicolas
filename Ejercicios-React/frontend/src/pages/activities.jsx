@@ -1,25 +1,10 @@
-import './styles/Activities.scss'
+import '@styles/Activities.scss'
+import { activities } from '@data/activities.js';
+import Card from '@components/card.jsx';  
 
 const Activities = () => 
 {
-const activities = [
-  {
-    nombre: "taekwondo",
-    descripcion: "Arte marcial coreana",
-    horarios: [
-      { dia: 2, "hora-inicio": "18:30", "hora-fin": "20:00" },
-      { dia: 4, "hora-inicio": "18:30", "hora-fin": "20:00" }
-    ]
-  },
-  {
-    nombre: "zumba",
-    descripcion: "ritmos latinos",
-    horarios: [
-      { dia: 1, "hora-inicio": "19:30", "hora-fin": "20:30" },
-      { dia: 3, "hora-inicio": "19:30", "hora-fin": "20:30" }
-    ]
-  }
-];
+
 
 const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 

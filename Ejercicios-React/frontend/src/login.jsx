@@ -12,7 +12,9 @@ const Login = () => {
         e.preventDefault();
         if (usuario === "admin" && password === "admin") {
  alert("Login exitoso");
+ localStorage.setItem("isLoggedIn", "true");
     navigate("/actividades");
+    
     }
     else
     {

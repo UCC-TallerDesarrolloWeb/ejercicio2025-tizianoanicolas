@@ -23,6 +23,8 @@ const activities = [
 
 const diasSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 
+const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
+
 const handleInscription = (activitynombre) => {
 alert(`Inscripto en la actividad: ${activitynombre}`);
 }
@@ -36,11 +38,12 @@ alert(`Inscripto en la actividad: ${activitynombre}`);
     <ul>
         {activity.horarios.map((horario, idx) => (
             <li key={idx}>
-                Dia: {diasSemana[horario.dia]} - hora de inicio:{horario["hora-inicio"]} - hora de fin: {horario["hora-fin"]}
+                Dia: {diasSemana[horario.dia]} - hora de inicio: {horario["hora-inicio"]} - hora de fin: {horario["hora-fin"]}
             </li>
         ))}
     </ul>
-    <button onClick={() => handleInscription(activity.nombre)}>Inscribir</button>
+    {isLoggedIn && (<button onClick={() => handleInscription(activity.nombre)}>Inscribir</button>)}
+    
 </div>
 )}
     </div>

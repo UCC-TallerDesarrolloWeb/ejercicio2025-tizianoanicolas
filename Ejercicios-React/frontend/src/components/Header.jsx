@@ -17,7 +17,7 @@ const Header = () =>
                 <a href="/">Home</a>
                 {isLoggedIn ? (<button onClick={logout}>Cerrar sesion</button>):(<a href="/login">Login</a>)}
                 
-                <a href="/activities">Actividades</a>
+                <a href="/actividades">Actividades</a>
             </nav>
         </header>
     )

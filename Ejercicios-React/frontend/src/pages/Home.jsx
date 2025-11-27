@@ -7,7 +7,7 @@ import yogaimg from '@assets/home/yoga.webp';
 
 const Home = () => {
     return (
-        <div>
+        <div className="card-home">
             <div>
                 <img src={funcimg} alt="funcional" />
                 <h2>Funcional</h2>

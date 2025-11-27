@@ -12,6 +12,7 @@ export default defineConfig({
       '@styles': path.resolve('./src/styles'),
       '@data': path.resolve('./src/data'),
       '@assets': path.resolve('./src/assets'),
+      '@phome': path.resolve('./public/home'),
     }
   }
 })
